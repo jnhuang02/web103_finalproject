@@ -1,8 +1,8 @@
-# [your app name here]
+# Eventure
 
 CodePath WEB103 Final Project
 
-Designed and developed by: [your names here]
+Designed and developed by: Justin and Lorenzo
 
 🔗 Link to deployed app:
 
@@ -10,35 +10,35 @@ Designed and developed by: [your names here]
 
 ### Description and Purpose
 
-[text goes here]
+A website where users can sign up for local events
 
 ### Inspiration
 
-[text goes here]
+Other websites like eventbrite and partiful that allows people to sign up for local events
 
 ## Tech Stack
 
-Frontend:
+Frontend: Node.js/React with Javascript and tailwind.css
 
-Backend:
+Backend: Express.js
 
 ## Features
 
-### [Name of Feature 1]
+### [Browse]
 
-[short description goes here]
-
-[gif goes here]
-
-### [Name of Feature 2]
-
-[short description goes here]
+Users can browse the home page for new events
 
 [gif goes here]
 
-### [Name of Feature 3]
+### [Event Overview]
 
-[short description goes here]
+Users can click on the event and see what is interesting
+
+[gif goes here]
+
+### Event sign up
+
+Users can sign up for each event
 
 [gif goes here]
 
