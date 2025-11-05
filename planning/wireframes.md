@@ -18,5 +18,6 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 ## Wireframe 3: [Event Sign up]
 
 [👉🏾👉🏾👉🏾 include wireframe 3]
+![Event Sign-up](event_signup.ong "Sign-up")
 
 [👉🏾👉🏾👉🏾 include more wireframes as desired]
