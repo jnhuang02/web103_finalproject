@@ -8,11 +8,12 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 
 ## Wireframe 1: [Home Page]
 
-[👉🏾👉🏾👉🏾 include wireframe 1]
+![Home Page](home_page.png "Home")
+
 
 ## Wireframe 2: [Event Overview]
 
-[👉🏾👉🏾👉🏾 include wireframe 2]
+![Event Overview](event_overview.png "Overview")
 
 ## Wireframe 3: [Event Sign up]
 
