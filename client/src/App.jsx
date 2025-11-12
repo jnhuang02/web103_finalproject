@@ -59,6 +59,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import LocationDetail from './pages/LocationDetail'
 import AllEvents from './pages/AllEvents'
+import EventOverview from './pages/EventOverview'
 
 
 export default function App(){
@@ -69,6 +70,7 @@ return (
 <Routes>
 <Route path="/" element={<Home />} />
 <Route path="/events" element={<AllEvents />} />
+<Route path="/events/:id" element={<EventOverview />} />
 <Route path="/locations/:slug" element={<LocationDetail />} />
 </Routes>
 </main>

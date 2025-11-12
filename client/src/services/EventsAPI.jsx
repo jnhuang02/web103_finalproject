@@ -14,3 +14,10 @@ const res = await fetch(`${API}/locations/${slug}/events`)
 if (!res.ok) throw new Error('Failed to fetch events for location')
 return res.json()
 }
+
+
+export async function fetchEventById(id) {
+const res = await fetch(`${API}/events/${id}`)
+if (!res.ok) throw new Error('Event not found')
+return res.json()
+}

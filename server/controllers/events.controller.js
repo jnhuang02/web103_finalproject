@@ -37,3 +37,18 @@ ORDER BY e.starts_at ASC
 res.json(rows)
 } catch (e) { res.status(500).json({ error: e.message }) }
 }
+
+
+export async function getEventById(req, res) {
+try {
+const { id } = req.params
+const { rows } = await pool.query(`
+SELECT e.*, l.name as location_name, l.slug as location_slug, l.city as location_city, l.state as location_state, l.stadium as location_stadium, l.logo_url
+FROM events e
+JOIN locations l ON l.id = e.location_id
+WHERE e.id = $1
+`, [id])
+if (!rows[0]) return res.status(404).json({ error: 'Event not found' })
+res.json(rows[0])
+} catch (e) { res.status(500).json({ error: e.message }) }
+}

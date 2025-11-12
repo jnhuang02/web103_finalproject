@@ -27,7 +27,8 @@ async function reset() {
 			category TEXT,
 			url TEXT,
 			starts_at TIMESTAMPTZ NOT NULL,
-			ends_at TIMESTAMPTZ
+			ends_at TIMESTAMPTZ,
+			tickets_remaining INTEGER DEFAULT 0
 		);
 
 		CREATE INDEX idx_events_location_id ON events(location_id);
@@ -60,18 +61,18 @@ async function reset() {
 	const inDays = d => new Date(now.getTime() + d*24*60*60*1000)
 
 	const events = [
-		{ slug: 'San Francisco', title: 'Tech Meetup', category: 'Meetup', description: 'Come meet the brightest minds in San Francisco!', url: 'https://example.com/49ers-tailgate', starts_at: inDays(5).toISOString(), ends_at: inDays(5).toISOString() },
-		{ slug: 'San Francisco', title: 'Lunch Party', category: 'Social Gathering', description: "Meet some new friends at the comedy club!", url: 'https://example.com/49ers-tour', starts_at: inDays(-3).toISOString(), ends_at: inDays(-3).toISOString() },
-		{ slug: 'Seattle', title: 'World Series Watch Party', category: 'Watch', description: 'Come to the bar to watch the World Series!', url: 'https://example.com/sea-watch', starts_at: inDays(2).toISOString(), ends_at: inDays(2).toISOString() },
-		{ slug: 'Los Angeles', title: '626 Food Fest', category: 'Festival', description: 'BBQ trucks + live music on the plaza.', url: 'https://example.com/kc-bbq', starts_at: inDays(10).toISOString(), ends_at: inDays(10).toISOString() },
-		{ slug: 'Dallas', title: 'Dallas Rodeo', category: 'Event', description: 'Come see the local rodeo', url: 'https://example.com/dal-clinic', starts_at: inDays(1).toISOString(), ends_at: inDays(1).toISOString() }
+		{ slug: 'San Francisco', title: 'Tech Meetup', category: 'Meetup', description: 'Come meet the brightest minds in San Francisco!', url: 'https://example.com/49ers-tailgate', starts_at: inDays(5).toISOString(), ends_at: inDays(5).toISOString(), tickets_remaining: 42 },
+		{ slug: 'San Francisco', title: 'Lunch Party', category: 'Social Gathering', description: "Meet some new friends at the comedy club!", url: 'https://example.com/49ers-tour', starts_at: inDays(-3).toISOString(), ends_at: inDays(-3).toISOString(), tickets_remaining: 0 },
+		{ slug: 'Seattle', title: 'World Series Watch Party', category: 'Watch', description: 'Come to the bar to watch the World Series!', url: 'https://example.com/sea-watch', starts_at: inDays(2).toISOString(), ends_at: inDays(2).toISOString(), tickets_remaining: 18 },
+		{ slug: 'Los Angeles', title: '626 Food Fest', category: 'Festival', description: 'BBQ trucks + live music on the plaza.', url: 'https://example.com/kc-bbq', starts_at: inDays(10).toISOString(), ends_at: inDays(10).toISOString(), tickets_remaining: 120 },
+		{ slug: 'Dallas', title: 'Dallas Rodeo', category: 'Event', description: 'Come see the local rodeo', url: 'https://example.com/dal-clinic', starts_at: inDays(1).toISOString(), ends_at: inDays(1).toISOString(), tickets_remaining: 5 }
 	]
 
 	for (const e of events) {
 		await pool.query(
-			`INSERT INTO events (location_id, title, description, category, url, starts_at, ends_at)
-			 VALUES ($1,$2,$3,$4,$5,$6,$7)`,
-			[bySlug[e.slug], e.title, e.description, e.category, e.url, e.starts_at, e.ends_at]
+			`INSERT INTO events (location_id, title, description, category, url, starts_at, ends_at, tickets_remaining)
+			 VALUES ($1,$2,$3,$4,$5,$6,$7,$8)`,
+			[bySlug[e.slug], e.title, e.description, e.category, e.url, e.starts_at, e.ends_at, e.tickets_remaining]
 		)
 	}
 

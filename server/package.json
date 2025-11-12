@@ -1,17 +1,1 @@
-{
-"name": "virtual-community-server",
-"type": "module",
-"scripts": {
-  "dev": "node server.js",
-  "reset": "node --require dotenv/config config/reset.js",
-  "start": "npm run reset && nodemon --require dotenv/config server.js"
-},
-"dependencies": {
-"cors": "^2.8.5",
-		"dotenv": "^16.0.3",
-		"serve-favicon": "^2.5.0",
-"express": "^4.19.2",
-"morgan": "^1.10.0",
-"pg": "^8.13.0"
-}
-}
+{"name":"virtual-community-server","type":"module","scripts":{"dev":"node server.js","reset":"node --require dotenv/config config/reset.js","start":"npm run reset && nodemon --require dotenv/config server.js"},"dependencies":{"cors":"^2.8.5","dotenv":"^16.0.3","express":"^4.19.2","morgan":"^1.10.0","pg":"^8.13.0","serve-favicon":"^2.5.0"}}
