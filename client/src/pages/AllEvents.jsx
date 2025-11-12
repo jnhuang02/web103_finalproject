@@ -23,7 +23,7 @@ return (
 <div className="filters">
 <input placeholder="Search title/description…" value={q} onChange={e=>setQ(e.target.value)} />
 <select value={location} onChange={e=>setLocation(e.target.value)}>
-<option value="">All teams</option>
+<option value="">All Locations</option>
 {locations.map(s => <option key={s} value={s}>{s}</option>)}
 </select>
 </div>

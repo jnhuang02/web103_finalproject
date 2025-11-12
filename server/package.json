@@ -2,10 +2,9 @@
 "name": "virtual-community-server",
 "type": "module",
 "scripts": {
-"dev": "node server.js",
-"reset": "cd config && node --require dotenv/config reset.js",
-"start": "npm run reset && nodemon --require dotenv/config server.js"
-
+  "dev": "node server.js",
+  "reset": "node --require dotenv/config config/reset.js",
+  "start": "npm run reset && nodemon --require dotenv/config server.js"
 },
 "dependencies": {
 "cors": "^2.8.5",

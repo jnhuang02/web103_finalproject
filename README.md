@@ -24,11 +24,12 @@ Backend: Express.js
 
 ## Features
 
-### [Browse]
+
+### Browse events (This event has been finished and implemented)
 
 Users can browse the home page for new events
 
-[gif goes here]
+https://www.loom.com/share/92c416c9a3c748df8755dae62a83d08d
 
 ### [Event Overview]
 
@@ -43,6 +44,8 @@ Users can sign up for each event
 [gif goes here]
 
 ### [ADDITIONAL FEATURES GO HERE - ADD ALL FEATURES HERE IN THE FORMAT ABOVE; you will check these off and add gifs as you complete them]
+
+User can search and filter events by name and location respectively
 
 ## Installation Instructions
 

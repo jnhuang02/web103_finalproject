@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { pool } from './database.js'
 
 async function reset() {
@@ -35,10 +36,10 @@ async function reset() {
 
 	// Seed: 4+ NFL teams as locations
 	const locations = [
-		{ name: 'San Francisco 49ers', slug: '49ers', city: 'Santa Clara', state: 'CA', stadium: "Levi's Stadium", lat: 37.403, lng: -121.97, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SF' },
-		{ name: 'Seattle Seahawks', slug: 'seahawks', city: 'Seattle', state: 'WA', stadium: 'Lumen Field', lat: 47.5952, lng: -122.3316, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SEA' },
-		{ name: 'Kansas City Chiefs', slug: 'chiefs', city: 'Kansas City', state: 'MO', stadium: 'GEHA Field at Arrowhead', lat: 39.049, lng: -94.4839, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/KC' },
-		{ name: 'Dallas Cowboys', slug: 'cowboys', city: 'Arlington', state: 'TX', stadium: "AT&T Stadium", lat: 32.7473, lng: -97.0945, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/DAL' }
+		{ name: 'San Francisco', slug: 'San Francisco', city: 'Santa Clara', state: 'CA', stadium: "Levi's Stadium", lat: 37.403, lng: -121.97, logo_url: 'https://mtc.ca.gov/sites/default/files/images/2021-06/AdobeStock_242784087.jpghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_zXHI5nzcU-QqIOKYh4NOhBOXGS8-EksnIA&s' },
+		{ name: 'Seattle', slug: 'Seattle', city: 'Seattle', state: 'WA', stadium: 'Lumen Field', lat: 47.5952, lng: -122.3316, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SEA' },
+		{ name: 'Los Angeles', slug: 'Los Angeles', city: 'Kansas City', state: 'MO', stadium: 'GEHA Field at Arrowhead', lat: 39.049, lng: -94.4839, logo_url: 'https://images.squarespace-cdn.com/content/v1/54c86088e4b059985165f545/1627967547996-2Z8Y32IMJ3KS6RMGCBB2/626-night-market-oc-fair-and-event-center-costa-mesa.png' },
+		{ name: 'Dallas', slug: 'Dallas', city: 'Arlington', state: 'TX', stadium: "AT&T Stadium", lat: 32.7473, lng: -97.0945, logo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPs47oPIijDznRIpkRcekcytZQMjSzMLvIZQ&s' }
 	]
 
 	const locValues = locations.map(l => (
@@ -59,11 +60,11 @@ async function reset() {
 	const inDays = d => new Date(now.getTime() + d*24*60*60*1000)
 
 	const events = [
-		{ slug: '49ers', title: 'Tailgate & Tech Meetup', category: 'Meetup', description: 'Pre-game tailgate with analytics lightning talks.', url: 'https://example.com/49ers-tailgate', starts_at: inDays(5).toISOString(), ends_at: inDays(5).toISOString() },
-		{ slug: '49ers', title: 'Stadium Tour', category: 'Tour', description: "Behind-the-scenes tour of Levi's Stadium.", url: 'https://example.com/49ers-tour', starts_at: inDays(-3).toISOString(), ends_at: inDays(-3).toISOString() },
-		{ slug: 'seahawks', title: '12s Watch Party', category: 'Watch', description: 'Community watch party at Lumen Field concourse.', url: 'https://example.com/sea-watch', starts_at: inDays(2).toISOString(), ends_at: inDays(2).toISOString() },
-		{ slug: 'chiefs', title: 'Arrowhead Food Fest', category: 'Festival', description: 'BBQ trucks + live music on the plaza.', url: 'https://example.com/kc-bbq', starts_at: inDays(10).toISOString(), ends_at: inDays(10).toISOString() },
-		{ slug: 'cowboys', title: 'Youth Football Clinic', category: 'Clinic', description: 'Free drills and fundamentals with local coaches.', url: 'https://example.com/dal-clinic', starts_at: inDays(1).toISOString(), ends_at: inDays(1).toISOString() }
+		{ slug: 'San Francisco', title: 'Tech Meetup', category: 'Meetup', description: 'Come meet the brightest minds in San Francisco!', url: 'https://example.com/49ers-tailgate', starts_at: inDays(5).toISOString(), ends_at: inDays(5).toISOString() },
+		{ slug: 'San Francisco', title: 'Lunch Party', category: 'Social Gathering', description: "Meet some new friends at the comedy club!", url: 'https://example.com/49ers-tour', starts_at: inDays(-3).toISOString(), ends_at: inDays(-3).toISOString() },
+		{ slug: 'Seattle', title: 'World Series Watch Party', category: 'Watch', description: 'Come to the bar to watch the World Series!', url: 'https://example.com/sea-watch', starts_at: inDays(2).toISOString(), ends_at: inDays(2).toISOString() },
+		{ slug: 'Los Angeles', title: '626 Food Fest', category: 'Festival', description: 'BBQ trucks + live music on the plaza.', url: 'https://example.com/kc-bbq', starts_at: inDays(10).toISOString(), ends_at: inDays(10).toISOString() },
+		{ slug: 'Dallas', title: 'Dallas Rodeo', category: 'Event', description: 'Come see the local rodeo', url: 'https://example.com/dal-clinic', starts_at: inDays(1).toISOString(), ends_at: inDays(1).toISOString() }
 	]
 
 	for (const e of events) {
