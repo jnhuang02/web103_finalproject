@@ -47,6 +47,8 @@ Users can sign up for each event
 
 User can search and filter events by name and location respectively
 
+Countdown to event start date
+
 ## Installation Instructions
 
 [instructions go here]
