@@ -155,6 +155,38 @@ h2 { margin:0 0 0.5rem }
 .home__locations h2, .home__events h2 { font-size:1.8rem }
 .home__events .events { margin-top:1rem }
 
+.signup-page { display:flex; flex-direction:column; gap:1.5rem; padding-bottom:4rem }
+.signup-page__crumbs { margin-top:0.5rem }
+.signup-layout { display:grid; gap:1.5rem; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) }
+.signup-summary { background:rgba(15,23,42,.65); border-radius:24px; border:1px solid rgba(148,163,184,.12); padding:2rem; box-shadow:0 24px 40px rgba(15,23,42,.35); display:flex; flex-direction:column; gap:1.25rem }
+.signup-summary header { display:flex; gap:1.25rem; align-items:flex-start }
+.signup-summary header img { width:96px; height:96px; object-fit:contain }
+.signup-summary h2 { margin-bottom:0.15rem }
+.signup-summary__meta { color:var(--muted); margin-top:0.35rem }
+.signup-summary__tags { display:flex; gap:0.5rem; flex-wrap:wrap }
+.chip { display:inline-flex; align-items:center; gap:0.25rem; padding:0.35rem 0.65rem; border-radius:999px; background:rgba(148,163,184,0.18); color:var(--text); font-size:0.8rem; letter-spacing:0.02em; text-transform:uppercase }
+.chip--alert { background:rgba(249,115,22,.18); color:#fb923c }
+.chip--soldout { background:rgba(248,113,113,.2); color:#fca5a5 }
+
+.signup-card { background:rgba(15,23,42,.75); border-radius:24px; border:1px solid rgba(148,163,184,.12); padding:2rem; display:flex; flex-direction:column; gap:1rem; box-shadow:0 24px 40px rgba(15,23,42,.35) }
+.signup-card h3 { margin-top:0; margin-bottom:0.25rem }
+.field { display:flex; flex-direction:column; gap:0.35rem }
+.field input, .field textarea { padding:0.7rem 0.85rem; border-radius:12px; border:1px solid #243242; background:#0e1620; color:var(--text); font-size:1rem; resize:vertical; min-height:0 }
+.field input:focus, .field textarea:focus { outline:none; border-color:var(--brand); box-shadow:0 0 0 3px rgba(34,211,238,0.15) }
+.field__hint { color:var(--muted); font-size:0.8rem }
+.ticket-selector { display:flex; align-items:center; gap:0.75rem; background:#050a12; border:1px solid #243242; border-radius:14px; padding:0.55rem 0.75rem; width:max-content }
+.ticket-selector button { background:rgba(15,23,42,.8); color:var(--text); border:none; width:36px; height:36px; border-radius:10px; font-size:1.25rem; cursor:pointer; transition:background .15s ease, transform .15s ease }
+.ticket-selector button:hover:not(:disabled) { background:rgba(34,211,238,0.18); color:var(--brand); transform:translateY(-1px) }
+.ticket-selector button:disabled { opacity:0.35; cursor:not-allowed }
+.ticket-selector span { font-weight:700; font-size:1.1rem; min-width:1.5rem; text-align:center }
+.signup-success { color:#34d399; font-weight:600; margin:0 }
+.signup-error { color:#f87171; font-weight:600; margin:0 }
+.btn--primary { justify-content:center; font-size:1.05rem; padding:0.7rem 1.2rem }
+
+@media (max-width:960px){
+  .signup-layout { grid-template-columns:1fr }
+}
+
 @media (max-width:720px){
   .events { grid-template-columns:1fr }
   .events-page__header { flex-direction:column; align-items:flex-start }

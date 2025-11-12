@@ -60,6 +60,7 @@ import Home from './pages/Home'
 import LocationDetail from './pages/LocationDetail'
 import AllEvents from './pages/AllEvents'
 import EventOverview from './pages/EventOverview'
+import EventSignup from './pages/EventSignup'
 
 
 export default function App(){
@@ -71,6 +72,7 @@ return (
 <Route path="/" element={<Home />} />
 <Route path="/events" element={<AllEvents />} />
 <Route path="/events/:id" element={<EventOverview />} />
+<Route path="/events/:id/signup" element={<EventSignup />} />
 <Route path="/locations/:slug" element={<LocationDetail />} />
 </Routes>
 </main>

@@ -49,12 +49,12 @@ return (
 </article>
 
 <footer className="event-overview__actions">
-{event.url ? (
-<a className={`btn ${soldOut ? 'disabled' : ''}`} href={event.url} target="_blank" rel="noreferrer">
-{soldOut ? 'Join Waitlist' : 'Reserve Tickets'}
-</a>
+{soldOut ? (
+<button className="btn disabled" disabled>Sold Out</button>
 ) : (
-<button className="btn disabled" disabled>Reservations Unavailable</button>
+<Link className="btn" to={`/events/${event.id}/signup`}>
+Reserve Tickets
+</Link>
 )}
 </footer>
 </section>
