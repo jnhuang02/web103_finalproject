@@ -23,6 +23,11 @@ Frontend: Node.js/React with Javascript and tailwind.css
 Backend: Express.js
 
 ## Features
+✅ Home Page
+https://www.loom.com/share/92c416c9a3c748df8755dae62a83d08d.gif
+
+✅ Project Build
+https://www.loom.com/share/92c416c9a3c748df8755dae62a83d08d.gif
 
 
 ### Browse events (This event has been finished and implemented)
