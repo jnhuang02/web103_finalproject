@@ -37,9 +37,9 @@ async function reset() {
 
 	// Seed: 4+ NFL teams as locations
 	const locations = [
-		{ name: 'San Francisco', slug: 'San Francisco', city: 'Santa Clara', state: 'CA', stadium: "Levi's Stadium", lat: 37.403, lng: -121.97, logo_url: 'https://mtc.ca.gov/sites/default/files/images/2021-06/AdobeStock_242784087.jpghttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_zXHI5nzcU-QqIOKYh4NOhBOXGS8-EksnIA&s' },
+		{ name: 'San Francisco', slug: 'San Francisco', city: 'Santa Clara', state: 'CA', stadium: "Levi's Stadium", lat: 37.403, lng: -121.97, logo_url: 'https://travel.usnews.com/images/Mission_Getty_Images.jpg' },
 		{ name: 'Seattle', slug: 'Seattle', city: 'Seattle', state: 'WA', stadium: 'Lumen Field', lat: 47.5952, lng: -122.3316, logo_url: 'https://static.www.nfl.com/t_q-best/league/api/clubs/logos/SEA' },
-		{ name: 'Los Angeles', slug: 'Los Angeles', city: 'Kansas City', state: 'MO', stadium: 'GEHA Field at Arrowhead', lat: 39.049, lng: -94.4839, logo_url: 'https://images.squarespace-cdn.com/content/v1/54c86088e4b059985165f545/1627967547996-2Z8Y32IMJ3KS6RMGCBB2/626-night-market-oc-fair-and-event-center-costa-mesa.png' },
+		{ name: 'Los Angeles', slug: 'Los Angeles', city: 'Santa Monica', state: 'CA', stadium: 'GEHA Field at Arrowhead', lat: 39.049, lng: -94.4839, logo_url: 'https://images.squarespace-cdn.com/content/v1/54c86088e4b059985165f545/1627967547996-2Z8Y32IMJ3KS6RMGCBB2/626-night-market-oc-fair-and-event-center-costa-mesa.png' },
 		{ name: 'Dallas', slug: 'Dallas', city: 'Arlington', state: 'TX', stadium: "AT&T Stadium", lat: 32.7473, lng: -97.0945, logo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPs47oPIijDznRIpkRcekcytZQMjSzMLvIZQ&s' }
 	]
 
