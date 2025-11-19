@@ -55,6 +55,7 @@
 // export default App
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import LocationDetail from './pages/LocationDetail'
@@ -64,7 +65,14 @@ import EventSignup from './pages/EventSignup'
 
 
 export default function App(){
+const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID
+
+if (!clientId) {
+console.error('VITE_GOOGLE_CLIENT_ID is not set in .env file')
+}
+
 return (
+<GoogleOAuthProvider clientId={clientId || ''}>
 <BrowserRouter>
 <Navbar />
 <main className="container">
@@ -77,5 +85,6 @@ return (
 </Routes>
 </main>
 </BrowserRouter>
+</GoogleOAuthProvider>
 )
 }

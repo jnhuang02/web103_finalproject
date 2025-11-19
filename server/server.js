@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import eventsRouter from './routes/events.routes.js'
 import locationsRouter from './routes/locations.routes.js'
+import authRouter from './routes/auth.routes.js'
 
 // import the router from your routes file
 
@@ -19,11 +20,15 @@ const app = express()
 
 app.use(express.json())
 // Allow cross-origin during development so the client (vite) can call the API
-app.use(cors())
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true
+}))
 
 // Mount API routes under /api
 app.use('/api', eventsRouter)
 app.use('/api', locationsRouter)
+app.use('/api', authRouter)
 
 if (process.env.NODE_ENV === 'development') {
     app.use(favicon(path.resolve('../', 'client', 'public', 'party.png')))
