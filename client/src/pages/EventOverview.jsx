@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { fetchEventById } from '../services/EventsAPI'
+import Spinner from '../components/Spinner'
 
 
 export default function EventOverview(){
@@ -18,7 +19,7 @@ fetchEventById(id)
 }, [id])
 
 
-if (loading) return <p>Loading event…</p>
+if (loading) return <div style={{display:'flex',justifyContent:'center',padding:'4rem'}}><Spinner size="large" /></div>
 if (error) return <p className="error">{error}</p>
 if (!event) return <p>Event not found</p>
 

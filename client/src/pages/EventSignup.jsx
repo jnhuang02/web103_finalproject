@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { fetchEventById, reserveTickets } from '../services/EventsAPI'
+import Spinner from '../components/Spinner'
 
 
 export default function EventSignup(){
@@ -40,7 +41,7 @@ setTickets(capacityLeft || 1)
 }, [capacityLeft, tickets])
 
 
-if (loading) return <p>Loading sign-up…</p>
+if (loading) return <div style={{display:'flex',justifyContent:'center',padding:'4rem'}}><Spinner size="large" /></div>
 if (error) return <p className="error">{error}</p>
 if (!event) return <p>Event not found</p>
 

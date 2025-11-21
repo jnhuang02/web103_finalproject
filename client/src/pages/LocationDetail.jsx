@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { fetchLocation } from '../services/LocationsAPI'
 import { fetchEventsByLocation } from '../services/EventsAPI'
 import EventCard from '../components/EventCard'
+import Spinner from '../components/Spinner'
 
 
 export default function LocationDetail(){
@@ -24,7 +25,7 @@ load().catch(console.error)
 }, [slug])
 
 
-if (loading) return <p>Loading…</p>
+if (loading) return <div style={{display:'flex',justifyContent:'center',padding:'4rem'}}><Spinner size="large" /></div>
 if (!location) return <p>Not found</p>
 
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GoogleLogin } from '@react-oauth/google'
 import { verifyGoogleToken, getCurrentUser, logout } from '../services/AuthAPI'
+import Spinner from './Spinner'
 
 
 export default function Navbar(){
@@ -39,7 +40,7 @@ return (
 <div className="links">
 <Link to="/events">All Events</Link>
 {loading ? (
-<span className="nav-loading">Loading…</span>
+<Spinner size="small" className="nav-loading" />
 ) : user ? (
 <div className="nav-user">
 {user.photo && <img src={user.photo} alt={user.name} className="nav-avatar" />}

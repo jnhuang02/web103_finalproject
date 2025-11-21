@@ -3,6 +3,7 @@ import { fetchLocations } from '../services/LocationsAPI'
 import { fetchAllEvents } from '../services/EventsAPI'
 import TeamCard from '../components/TeamCard'
 import EventCard from '../components/EventCard'
+import Spinner from '../components/Spinner'
 
 
 export default function Home(){
@@ -29,7 +30,7 @@ load()
 }, [])
 
 
-if (loading) return <p>Loading…</p>
+if (loading) return <div style={{display:'flex',justifyContent:'center',padding:'4rem'}}><Spinner size="large" /></div>
 if (error) return <p className="error">{error}</p>
 
 
